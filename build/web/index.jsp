@@ -32,11 +32,11 @@
           
                     <div class="id">
                         <i class="fa fa-lock" aria-hidden="true"></i>
-                        <input type="text" placeholder="login" class="txt" name="login">
+                        <input type="text" placeholder="login" class="txt" name="login" required>
                     </div>
                     <div class="pass">
                         <i class="fa fa-user" aria-hidden="true"></i>
-                        <input type="password" placeholder="senha" class="txt" name="senha">
+                        <input type="password" placeholder="senha" class="txt" name="senha" required>
                     </div> 
                         <br>
                     <button type="submit" class="bt">Logar</button>

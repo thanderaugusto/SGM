@@ -18,26 +18,26 @@ public class UsuarioDAO {
      public UsuarioDAO(){
         this.connection = new ConnectionFactory().getConnection();
     }    
-    public  int create(Usuario u) throws SQLException{
-      
+    public boolean adicionar(Usuario u) throws SQLException{
+            String sql = "INSERT INTO usuarios(nome, login, senha) VALUES (?, ?, ?)" ;
            
         
-         try (PreparedStatement stm = connection.prepareStatement("INSERT INTO usuarios(nome, login, senha) VALUES (?, ?, ?)")) {
+         try {
+             PreparedStatement stm = connection.prepareStatement(sql);
              Statement stmt = (Statement) this.connection.createStatement();
              
              stm.setString(1, u.getNome());
              stm.setString(2, u.getLogin());
              stm.setString(3, u.getSenha());
-             
              stm.execute();
-             
-             ResultSet rs = stm.getGeneratedKeys();
-             rs.next();
-             u.setPk_usuario(rs.getInt(1));
-         }
-       
-        return u.getPk_usuario();
+             stm.close();
+             return true;
+         }catch (SQLException e) {
+			System.out.println(e);
+		}
+        return false;
     }
+    
     public  Usuario validarAcesso(String usuario, String senha) {
         
         Usuario user = null;

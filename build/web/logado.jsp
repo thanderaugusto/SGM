@@ -35,15 +35,15 @@
 
       <nav class="menu">
         <ul>
-          <li><a href="logado.jsp" id="v"><span class="seta"></span>Cadastro</a>
+          <li><a href="" id="v"><span class="seta"></span>Cadastro</a>
             <ul id="show">
               <li><a href="" data-toggle="modal" data-target="#modalEquipamento">Equipamento</a></li>
               <li><a href="" data-toggle="modal" data-target="#modalMotorista">Motorista</a></li>
-              <li><a href="">Manutenção</a></li>
-              <li><a href="">Usuário</a></li>
+              <li><a href="">ManutenÃ§Ã£o</a></li>
+              <li><a href="" data-toggle="modal" data-target="#modalUsuario">UsuÃ¡rio</a></li>
             </ul>
           </li>
-          <li><a href="" id="v"><span class="setar"><span class="seta"></span>Relatório</a>
+          <li><a href="" id="v"><span class="setar"><span class="seta"></span>RelatÃ³rio</a>
             <ul>
               <li><a href="">Equipamento</a></li>
               <li><a href="">Motorista</a></li>
@@ -59,7 +59,7 @@
     
       <!-- Modal content-->
       <div class="modal-content center">
-        <form action="" method="post">
+        <form action="" method="post" accept-charset="utf-8">
 
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -67,10 +67,13 @@
           </div>
           <div class="modal-body">
             <label for="nomeMotorista">Nome</label>
-            <input type="text" class="form-control" id="nomeMotorista" placeholder="Digite seu nome">
+            <input type="text" class="form-control" id="nomeMotorista" placeholder="Digite seu nome" required>
+            <br>
+            <label for="cpfMotorista">Data Nascimento</label>
+            <input type="date" class="form-control" id="nascMotorista" placeholder="Digite sua data de nascimento" required>
             <br>
             <label for="cpfMotorista">CPF</label>
-            <input type="text" class="form-control" id="cpfMotorista" placeholder="Digite seu cpf">
+            <input type="text" class="form-control" id="cpfMotorista" placeholder="Digite seu cpf" required>
           </div>
           <div class="modal-footer">
             <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
@@ -89,22 +92,28 @@
     
       <!-- Modal content-->
       <div class="modal-content">
-        <form action="" method="post">
+        <form action="" method="post" accept-charset="utf-8">
 
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
             <h4 class="modal-title" style="text-align: center;">Cadastro de Motorista</h4>
           </div>
           <div class="modal-body">
-            <label for="placaEquipamento">Placa</label>
-            <input type="text" class="form-control" id="placaEquipamento" placeholder="Digite a placa">
+            <label for="placaEquipamento">Frota</label>
+            <input type="text" class="form-control" id="frotaEquip" placeholder="Digite a frota" required>
+            <br>
+            <label for="placaEquipamento">Marca</label>
+            <input type="text" class="form-control" id="marcaEquip" placeholder="Digite a marca" required>
             <br>
             <label for="modeloEquipamento">Modelo</label>
-            <input type="text" class="form-control" id="modeloEquipamento" placeholder="Digite o modelo ">
+            <input type="text" class="form-control" id="modeloEquip" placeholder="Digite o modelo " required>
+            <br>
+            <label for="modeloEquipamento">Ano</label>
+            <input type="text" class="form-control" id="anoEquip" placeholder="Digite o ano " required>
           </div>
           <div class="modal-footer">
             <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
-            <button type="submit" class="btn btn-primary">Cadastrar</button>
+            <button type="submit" class="btn btn-primary" o>Cadastrar</button>
           </div>
 
         </form>
@@ -113,22 +122,48 @@
     </div>
   </div>
 
-  
+  <!-- Modal UsuÃ¡rio -->
+  <div class="modal fade modalp" id="modalUsuario" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <form action="ServletCadastrar" method="post">
+
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title" style="text-align: center;">Cadastro de Motorista</h4>
+          </div>
+          <div class="modal-body">
+            <label for="placaEquipamento">Nome</label>
+            <input type="text" class="form-control" id="nomeUser" placeholder="Digite seu nome" required>
+            <br>
+            <label for="placaEquipamento">UsuÃ¡rio</label>
+            <input type="text" class="form-control" id="loginUser" placeholder="Digite seu login" required>
+            <br>
+            <label for="modeloEquipamento">Senha</label>
+            <input type="password" class="form-control" id="senhaUser" placeholder="Digite sua senha " required>
+            <br>
+            <label for="modeloEquipamento">Confirmar Senha</label>
+            <input type="password" class="form-control" id="rSenhaUser" placeholder="Repita a senha" required>
+          </div>
+          <div class="modal-footer">
+            <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+            <button type="submit" class="btn btn-primary" o>Cadastrar</button>
+          </div>
+
+        </form>
+      </div>
+      
+    </div>
+  </div>
+
+
   <span class="bfooter"></span>
 
     <script src="js/libs/jquery-1.11.2.min.js"></script>
+    <script src="js/libs/jquery.mask.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
-    <script>
-$(document).ready(function(){
-    $("#bt_menu").click(function(){
-        $("#bth").hide();
-        $('.menu').show();
-    });
-    $("#v").click(function(){
-        $(".menu").show();
-        $(".menu").hide();
-    });
-});
-    </script>
+    <script src="js/main.js"></script>
   </body>
 </html>
