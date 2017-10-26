@@ -22,6 +22,10 @@ import validarBO.UserBO;
 
 @WebServlet ("/ServletCadastrar")
 public class ServletCadastrar extends HttpServlet {
+    
+    public ServletCadastrar() {
+		super();
+    }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -32,6 +36,8 @@ public class ServletCadastrar extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html; charset=UTF-8");
         Usuario user = new Usuario(request.getParameter("nome"), request.getParameter("login"), request.getParameter("senha"));
 
 		boolean resultado = false;
@@ -43,9 +49,9 @@ public class ServletCadastrar extends HttpServlet {
 
 		HttpSession session = request.getSession(false);
 
-		if (resultado) {
+		if (resultado==true) {
 			if (session.getAttribute("logado") == "OK") {
-				response.sendRedirect("index.jsp");
+				response.sendRedirect("logado.jsp");
 			} else {
 				response.sendRedirect("logado.jsp");
 			}

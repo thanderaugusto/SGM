@@ -4,9 +4,9 @@
     Author     : Thander
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html: charset=UTF-8;" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -39,11 +39,11 @@
             <ul id="show">
               <li><a href="" data-toggle="modal" data-target="#modalEquipamento">Equipamento</a></li>
               <li><a href="" data-toggle="modal" data-target="#modalMotorista">Motorista</a></li>
-              <li><a href="">ManutenÃ§Ã£o</a></li>
-              <li><a href="" data-toggle="modal" data-target="#modalUsuario">UsuÃ¡rio</a></li>
+              <li><a href="">Manutenção</a></li>
+              <li><a href="" data-toggle="modal" data-target="#modalUsuario">Usuário</a></li>
             </ul>
           </li>
-          <li><a href="" id="v"><span class="setar"><span class="seta"></span>RelatÃ³rio</a>
+          <li><a href="" id="v"><span class="setar"><span class="seta"></span>Relatório</a>
             <ul>
               <li><a href="">Equipamento</a></li>
               <li><a href="">Motorista</a></li>
@@ -128,7 +128,7 @@
     
       <!-- Modal content-->
       <div class="modal-content">
-        <form action="ServletCadastrar" method="post">
+          <form action="ServletCadastrar" method="post" accept-charset="utf-8">
 
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -136,13 +136,13 @@
           </div>
           <div class="modal-body">
             <label for="placaEquipamento">Nome</label>
-            <input type="text" class="form-control" id="nomeUser" placeholder="Digite seu nome" required>
+            <input type="text" class="form-control" id="nomeUser" name="nome" placeholder="Digite seu nome" required>
             <br>
             <label for="placaEquipamento">UsuÃ¡rio</label>
-            <input type="text" class="form-control" id="loginUser" placeholder="Digite seu login" required>
+            <input type="text" class="form-control" id="loginUser" name="login" placeholder="Digite seu login" required>
             <br>
             <label for="modeloEquipamento">Senha</label>
-            <input type="password" class="form-control" id="senhaUser" placeholder="Digite sua senha " required>
+            <input type="password" class="form-control" id="senhaUser" name="senha" placeholder="Digite sua senha " required>
             <br>
             <label for="modeloEquipamento">Confirmar Senha</label>
             <input type="password" class="form-control" id="rSenhaUser" placeholder="Repita a senha" required>
