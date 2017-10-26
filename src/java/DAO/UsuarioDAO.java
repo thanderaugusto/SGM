@@ -38,28 +38,29 @@ public class UsuarioDAO {
        
         return u.getPk_usuario();
     }
-    public  boolean validarAcesso(Usuario u) throws SQLException{
+    public  Usuario validarAcesso(String usuario, String senha) {
         
-      
+        Usuario user = null;
+        String sql = "SELECT * FROM usuarios WHERE login = ? and senha = ?";
         
-        PreparedStatement stm = connection.prepareStatement("SELECT * FROM usuarios WHERE login = ? and senha = ?");
-        Statement stmt = (Statement) this.connection.createStatement();
+        try {
+            
+            PreparedStatement stm = connection.prepareStatement(sql);
         
-        stm.setString(1, u.getLogin());
-        stm.setString(2, u.getSenha());
+            stm.setString(1, usuario);
+            stm.setString(2, senha);
+                
+            ResultSet rs = stm.executeQuery();
         
-        stm.execute();
-        
-        ResultSet rs = stm.getResultSet();
-        
-        if (rs.next()){
-            if(u.getLogin().equals(rs.getString("login")) && u.getSenha().equals(rs.getString("senha"))){
-                return true;
+            while (rs.next()){
+                user = new Usuario(rs.getInt("pk_usuario"), rs.getString("nome"), rs.getString("login"),rs.getString("senha"));
             }
-        }else{
-            return false;
-        }
-        
-        return false;
+
+	} catch (SQLException e) {
+			System.out.println(e);
+	}
+    return user;
     }
+
 }
+

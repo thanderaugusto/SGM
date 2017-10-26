@@ -38,15 +38,6 @@
                         <i class="fa fa-user" aria-hidden="true"></i>
                         <input type="password" placeholder="senha" class="txt" name="senha">
                     </div> 
-                    <!-- <div class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-user" for=""></i></span>
-                        <input type="text" name="login" class="form-control form-danger" placeholder="Digite seu login" required>
-                    </div>
-                    <br>
-                    <div class="input-group ">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                        <input type="password" name="senha" class="form-control" placeholder="Digite sua senha" required>
-                    </div> -->
                         <br>
                     <button type="submit" class="bt">Logar</button>
                 </form>
