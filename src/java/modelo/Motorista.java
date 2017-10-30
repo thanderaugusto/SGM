@@ -8,17 +8,17 @@ import java.sql.Date;
 public class Motorista {
     private int pk_motorista;
     private String nome;
-    private Date dataNascimento;
+    private String dataNascimento;
     private String cpf;
 
-    public Motorista(int pk_motorista, String nome, Date dataNascimento, String cpf) {
+    public Motorista(int pk_motorista, String nome, String dataNascimento, String cpf) {
         this.pk_motorista = pk_motorista;
         this.nome = nome;
         this.dataNascimento = dataNascimento;
         this.cpf = cpf;
     }
 
-    public Motorista(String nome, Date dataNascimento, String cpf) {
+    public Motorista(String nome, String dataNascimento, String cpf) {
         this.nome = nome;
         this.dataNascimento = dataNascimento;
         this.cpf = cpf;
@@ -42,13 +42,14 @@ public class Motorista {
         this.nome = nome;
     }
 
-    public Date getDataNascimento() {
+    public String getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(Date dataNascimento) {
+    public void setDataNascimento(String dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
+
 
     public String getCpf() {
         return cpf;

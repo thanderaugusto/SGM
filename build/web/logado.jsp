@@ -59,7 +59,7 @@
     
       <!-- Modal content-->
       <div class="modal-content center">
-        <form action="" method="post" accept-charset="utf-8">
+        <form action="ServletMotorista" method="post" accept-charset="utf-8">
 
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -67,13 +67,13 @@
           </div>
           <div class="modal-body">
             <label for="nomeMotorista">Nome</label>
-            <input type="text" class="form-control" id="nomeMotorista" placeholder="Digite seu nome" required>
+            <input type="text" class="form-control" id="nomeMotorista" name="nomeMotorista" placeholder="Digite seu nome" required>
             <br>
             <label for="cpfMotorista">Data Nascimento</label>
-            <input type="date" class="form-control" id="nascMotorista" placeholder="Digite sua data de nascimento" required>
+            <input type="date" class="form-control" id="nascMotorista" name="nascMotorista" placeholder="Digite sua data de nascimento" required>
             <br>
             <label for="cpfMotorista">CPF</label>
-            <input type="text" class="form-control" id="cpfMotorista" placeholder="Digite seu cpf" required>
+            <input type="text" class="form-control" id="cpfMotorista" name="cpfMotorista" placeholder="Digite seu cpf" required>
           </div>
           <div class="modal-footer">
             <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
@@ -100,16 +100,16 @@
           </div>
           <div class="modal-body">
             <label for="placaEquipamento">Frota</label>
-            <input type="text" class="form-control" id="frotaEquip" placeholder="Digite a frota" required>
+            <input type="text" class="form-control" id="frotaEquip" name="frotaEquip" placeholder="Digite a frota" required>
             <br>
             <label for="placaEquipamento">Marca</label>
-            <input type="text" class="form-control" id="marcaEquip" placeholder="Digite a marca" required>
+            <input type="text" class="form-control" id="marcaEquip" name="marcaEquip" placeholder="Digite a marca" required>
             <br>
             <label for="modeloEquipamento">Modelo</label>
-            <input type="text" class="form-control" id="modeloEquip" placeholder="Digite o modelo " required>
+            <input type="text" class="form-control" id="modeloEquip" name="modeloEquip" placeholder="Digite o modelo " required>
             <br>
             <label for="modeloEquipamento">Ano</label>
-            <input type="text" class="form-control" id="anoEquip" placeholder="Digite o ano " required>
+            <input type="text" class="form-control" id="anoEquip" name="anoEquip" placeholder="Digite o ano " required>
           </div>
           <div class="modal-footer">
             <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->

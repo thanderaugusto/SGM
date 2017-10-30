@@ -30,7 +30,7 @@ public class ServletCadastrar extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.sendRedirect("logado.jsp");
+        response.sendRedirect("index.jsp");
     }
 
     @Override
@@ -59,7 +59,7 @@ public class ServletCadastrar extends HttpServlet {
 			request.setAttribute("erroCadastro", "Erro ao cadastrar usuário, tente novamente.");
 			RequestDispatcher rd = request.getRequestDispatcher("logado.jsp");
 			rd.forward(request, response);
-}
+                }
     }
 
 }
