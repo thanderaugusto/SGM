@@ -75,7 +75,6 @@ public class ServletLogar extends HttpServlet {
             session.setAttribute("usuario", user.getLogin());
             response.sendRedirect("logado.jsp");
         }else {
-                request.setAttribute("erroLogin", "Usuário ou senha incorreto");
                 RequestDispatcher rd = request.getRequestDispatcher("index.jsp?falha=true");
                 rd.forward(request, response);
         }

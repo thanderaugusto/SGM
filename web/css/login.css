@@ -67,3 +67,11 @@
             padding: 10px;
             font-size: 12px;
         }
+        
+        #erro {
+    width: 205px;
+    text-align: center;
+    margin: 5px auto;
+    height: 33px;
+    padding: 6px;
+} 

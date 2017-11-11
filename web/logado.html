@@ -44,6 +44,7 @@
           </li>
         </ul>
       </nav>
+<a type="button" href="./logoff.jsp" class="btSair">Sair</a>
 </div>
 
   <!-- Modal Motorista -->
@@ -52,25 +53,25 @@
     
       <!-- Modal content-->
       <div class="modal-content center">
-        <form action="" method="post" accept-charset="utf-8">
+        <form action="ServletMotorista" method="post" accept-charset="utf-8">
 
-          <div class="modal-header">
+          <div class="modal-header modal-header-warning">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
             <h4 class="modal-title" style="text-align: center;">Cadastro de Motorista</h4>
           </div>
           <div class="modal-body">
             <label for="nomeMotorista">Nome</label>
-            <input type="text" class="form-control" id="nomeMotorista" placeholder="Digite seu nome" required>
+            <input type="text" class="form-control" id="nomeMotorista" name="nomeMotorista" placeholder="Digite seu nome" required>
             <br>
             <label for="cpfMotorista">Data Nascimento</label>
-            <input type="date" class="form-control" id="nascMotorista" placeholder="Digite sua data de nascimento" required>
+            <input type="date" class="form-control" id="nascMotorista" name="nascMotorista" placeholder="Digite sua data de nascimento" required>
             <br>
             <label for="cpfMotorista">CPF</label>
-            <input type="number" class="form-control" id="cpfMotorista" placeholder="Digite seu cpf" required>
+            <input type="text" class="form-control" id="cpfMotorista" name="cpfMotorista" placeholder="Digite seu cpf" required>
           </div>
           <div class="modal-footer">
             <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
-            <button type="submit" class="btn btn-primary">Cadastrar</button>
+            <button type="submit" class="btn btn-warning">Cadastrar</button>
           </div>
 
         </form>
@@ -89,20 +90,20 @@
 
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title" style="text-align: center;">Cadastro de Motorista</h4>
+            <h4 class="modal-title" style="text-align: center;">Cadastro de Equipamento</h4>
           </div>
           <div class="modal-body">
             <label for="placaEquipamento">Frota</label>
-            <input type="text" class="form-control" id="frotaEquip" placeholder="Digite a frota" required>
+            <input type="text" class="form-control" id="frotaEquip" name="frotaEquip" placeholder="Digite a frota" required>
             <br>
             <label for="placaEquipamento">Marca</label>
-            <input type="text" class="form-control" id="marcaEquip" placeholder="Digite a marca" required>
+            <input type="text" class="form-control" id="marcaEquip" name="marcaEquip" placeholder="Digite a marca" required>
             <br>
             <label for="modeloEquipamento">Modelo</label>
-            <input type="text" class="form-control" id="modeloEquip" placeholder="Digite o modelo " required>
+            <input type="text" class="form-control" id="modeloEquip" name="modeloEquip" placeholder="Digite o modelo " required>
             <br>
             <label for="modeloEquipamento">Ano</label>
-            <input type="text" class="form-control" id="anoEquip" placeholder="Digite o ano " required>
+            <input type="text" class="form-control" id="anoEquip" name="anoEquip" placeholder="Digite o ano " required>
           </div>
           <div class="modal-footer">
             <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
@@ -115,7 +116,7 @@
     </div>
   </div>
 
-  <!-- Modal UsuÃ¡rio -->
+  <!-- Modal Usuário -->
   <div class="modal fade modalp" id="modalUsuario" role="dialog">
     <div class="modal-dialog">
     
@@ -125,13 +126,13 @@
 
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title" style="text-align: center;">Cadastro de Motorista</h4>
+            <h4 class="modal-title" style="text-align: center;">Cadastro de Usuário</h4>
           </div>
           <div class="modal-body">
             <label for="placaEquipamento">Nome</label>
             <input type="text" class="form-control" id="nomeUser" name="nome" placeholder="Digite seu nome" required>
             <br>
-            <label for="placaEquipamento">UsuÃ¡rio</label>
+            <label for="placaEquipamento">Usuário</label>
             <input type="text" class="form-control" id="loginUser" name="login" placeholder="Digite seu login" required>
             <br>
             <label for="modeloEquipamento">Senha</label>

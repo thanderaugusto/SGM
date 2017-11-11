@@ -1,0 +1,429 @@
+<!-- <html><head>
+    <meta charset="utf-8">
+    <title>Bootstrap Editable Grid Template | PrepBootstrap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+<div class="page-header">
+    <h1>Bootstrap Editable Grid <small>A template, demonstrating a jquery Edtiable Grid component</small></h1>
+</div>
+
+Bootstrap Editable Grid - START
+
+<div class="col-md-12">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="text-center">Bootstrap Editable jQuery Grid <span class="fa fa-edit pull-right bigicon"></span></h4>
+        </div>
+        <div class="panel-body text-center">
+            <div id="grid" class="sui-grid sui-grid-core">
+    <div class="sui-gridheader">
+        <table class="sui-table">
+            <colgroup>
+                <col style="width:120px">
+                    <col style="width:80px">
+                        <col>
+                            <col style="width:120px">
+                                <col>
+                                    <col style="width:250px">
+                                        <col style="width:120px">
+                                            <col style="width:104px">
+            </colgroup>
+            <thead>
+                <tr class="sui-columnheader">
+                    <th data-field="name" class="sui-headercell"><a href="#" class="sui-link">Person Name</a></th>
+                    <th data-field="age" class="sui-headercell"><a href="#" class="sui-link">Age</a></th>
+                    <th data-field="company" class="sui-headercell"><a href="#" class="sui-link">Company Name</a></th>
+                    <th data-field="month" class="sui-headercell"><a href="#" class="sui-link">Date of Birth</a></th>
+                    <th data-field="isActive" class="sui-headercell"><a href="#" class="sui-link">Active</a></th>
+                    <th data-field="email" class="sui-headercell"><a href="#" class="sui-link">Email Address</a></th>
+                    <th data-field="transport" class="sui-headercell"><a href="#" class="sui-link">Custom Editor</a></th>
+                    <th data-field="undefined" class="sui-headercell"><a href="#" class="sui-link">Delete Column</a></th>
+                </tr>
+            </thead>
+            <tbody class="sui-hide">
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="sui-gridcontent">
+        <table class="sui-table">
+            <colgroup>
+                <col style="width:120px">
+                    <col style="width:80px">
+                        <col>
+                            <col style="width:120px">
+                                <col>
+                                    <col style="width:250px">
+                                        <col style="width:120px">
+                                            <col style="width:104px">
+            </colgroup>
+            <tbody>
+                <tr class="sui-row">
+                    <td class="sui-cell">Miller Gomez</td>
+                    <td class="sui-cell">66</td>
+                    <td class="sui-cell">QUILM</td>
+                    <td class="sui-cell">Tue Feb 11 2014 00:00:00 GMT-0200 (Hora oficial do Brasil)</td>
+                    <td class="sui-cell">true</td>
+                    <td class="sui-cell">millergomez@quilm.com</td>
+                    <td class="sui-cell">motorbike</td>
+                    <td class="sui-cell sui-button-cell">
+                        <button type="button" class="sui-button sui-unselectable deleteButton sui-delete"><img src="http://www.prepbootstrap.com/Content/images/template/BootstrapEditableGrid/delete.png"><span>Delete</span></button>
+                    </td>
+                </tr>
+                <tr class="sui-alt-row">
+                    <td class="sui-cell">Guerra Cortez</td>
+                    <td class="sui-cell">47</td>
+                    <td class="sui-cell">INSECTUS</td>
+                    <td class="sui-cell">Wed Mar 26 2014 00:00:00 GMT-0300</td>
+                    <td class="sui-cell">true</td>
+                    <td class="sui-cell">guerracortez@insectus.com</td>
+                    <td class="sui-cell">car</td>
+                    <td class="sui-cell sui-button-cell">
+                        <button type="button" class="sui-button sui-unselectable deleteButton sui-delete"><img src="http://www.prepbootstrap.com/Content/images/template/BootstrapEditableGrid/delete.png"><span>Delete</span></button>
+                    </td>
+                </tr>
+                <tr class="sui-row">
+                    <td class="sui-cell">Guadalupe House</td>
+                    <td class="sui-cell">26</td>
+                    <td class="sui-cell">ISOTRONIC</td>
+                    <td class="sui-cell">Tue Feb 22 2011 00:00:00 GMT-0300</td>
+                    <td class="sui-cell">false</td>
+                    <td class="sui-cell">guadalupehouse@isotronic.com</td>
+                    <td class="sui-cell">truck</td>
+                    <td class="sui-cell sui-button-cell">
+                        <button type="button" class="sui-button sui-unselectable deleteButton sui-delete"><img src="http://www.prepbootstrap.com/Content/images/template/BootstrapEditableGrid/delete.png"><span>Delete</span></button>
+                    </td>
+                </tr>
+                <tr class="sui-alt-row">
+                    <td class="sui-cell">Elisa Gallagher</td>
+                    <td class="sui-cell">22</td>
+                    <td class="sui-cell">PORTICA</td>
+                    <td class="sui-cell">Tue May 11 2010 00:00:00 GMT-0300</td>
+                    <td class="sui-cell">true</td>
+                    <td class="sui-cell">elisagallagher@portica.com</td>
+                    <td class="sui-cell">motorbike</td>
+                    <td class="sui-cell sui-button-cell">
+                        <button type="button" class="sui-button sui-unselectable deleteButton sui-delete"><img src="http://www.prepbootstrap.com/Content/images/template/BootstrapEditableGrid/delete.png"><span>Delete</span></button>
+                    </td>
+                </tr>
+                <tr class="sui-row">
+                    <td class="sui-cell">Aurelia Vega</td>
+                    <td class="sui-cell">30</td>
+                    <td class="sui-cell">DEEPENDS</td>
+                    <td class="sui-cell">Sat Oct 20 2012 00:00:00 GMT-0200 (Hora oficial do Brasil)</td>
+                    <td class="sui-cell">false</td>
+                    <td class="sui-cell">aureliavega@deepends.com</td>
+                    <td class="sui-cell">truck</td>
+                    <td class="sui-cell sui-button-cell">
+                        <button type="button" class="sui-button sui-unselectable deleteButton sui-delete"><img src="http://www.prepbootstrap.com/Content/images/template/BootstrapEditableGrid/delete.png"><span>Delete</span></button>
+                    </td>
+                </tr>
+                <tr class="sui-alt-row">
+                    <td class="sui-cell">Miller Dave</td>
+                    <td class="sui-cell">46</td>
+                    <td class="sui-cell">TESTERS</td>
+                    <td class="sui-cell">Sat Feb 11 2012 00:00:00 GMT-0200 (Hora oficial do Brasil)</td>
+                    <td class="sui-cell">true</td>
+                    <td class="sui-cell">millerdave@quilm.com</td>
+                    <td class="sui-cell">car</td>
+                    <td class="sui-cell sui-button-cell">
+                        <button type="button" class="sui-button sui-unselectable deleteButton sui-delete"><img src="http://www.prepbootstrap.com/Content/images/template/BootstrapEditableGrid/delete.png"><span>Delete</span></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+        </div>
+    </div>
+</div>
+
+you need to include the shieldui css and js assets in order for the grids to work
+<link rel="stylesheet" type="text/css" href="http://www.prepbootstrap.com/Content/shieldui-lite/dist/css/light/all.min.css">
+<script type="text/javascript" src="http://www.prepbootstrap.com/Content/shieldui-lite/dist/js/shieldui-lite-all.min.js"></script>
+
+<script type="text/javascript" src="http://www.prepbootstrap.com/Content/data/shortGridData.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#grid").shieldGrid({
+            dataSource: {
+                data: gridData,
+                schema: {
+                    fields: {
+                        id: { path: "id", type: Number },
+                        age: { path: "age", type: Number },
+                        name: { path: "name", type: String },
+                        company: { path: "company", type: String },
+                        month: { path: "month", type: Date },
+                        isActive: { path: "isActive", type: Boolean },
+                        email: { path: "email", type: String },
+                        transport: { path: "transport", type: String }
+                    }
+                }
+            },
+            sorting: {
+                multiple: true
+            },
+            rowHover: false,
+            columns: [
+                { field: "name", title: "Person Name", width: "120px" },
+                { field: "age", title: "Age", width: "80px" },
+                { field: "company", title: "Company Name" },
+                { field: "month", title: "Date of Birth", format: "{0:MM/dd/yyyy}", width: "120px" },
+                { field: "isActive", title: "Active" },
+                { field: "email", title: "Email Address", width: "250px" },
+                { field: "transport", title: "Custom Editor", width: "120px", editor: myCustomEditor },
+                {
+                    width: "104px",
+                    title: "Delete Column",
+                    buttons: [
+                        { cls: "deleteButton", commandName: "delete", caption: "<img src='http://www.prepbootstrap.com/Content/images/template/BootstrapEditableGrid/delete.png' /><span>Delete</span>" }
+                    ]
+                }
+            ],
+            editing: {
+                enabled: true,
+                event: "click",
+                type: "cell",
+                confirmation: {
+                    "delete": {
+                        enabled: true,
+                        template: function (item) {
+                            return "Delete row with ID = " + item.id
+                        }
+                    }
+                }
+            },
+            events:
+            {
+                getCustomEditorValue: function (e) {
+                    e.value = $("#dropdown").swidget().value();
+                    $("#dropdown").swidget().destroy();
+                }
+            }
+        });
+
+        function myCustomEditor(cell, item) {
+            $('<div id="dropdown"/>')
+                .appendTo(cell)
+                .shieldDropDown({
+                    dataSource: {
+                        data: ["motorbike", "car", "truck"]
+                    },
+                    value: !item["transport"] ? null : item["transport"].toString()
+                }).swidget().focus();
+        }
+    });
+</script>
+
+<style type="text/css">
+    .sui-button-cell
+    {
+        text-align: center;
+    }
+
+    .sui-checkbox
+    {
+        font-size: 17px !important;
+        padding-bottom: 4px !important;
+    }
+
+    .deleteButton img
+    {
+        margin-right: 3px;
+        vertical-align: bottom;
+    }
+
+    .bigicon
+    {
+        color: #5CB85C;
+        font-size: 20px;
+    }
+</style>
+
+Bootstrap Editable Grid - END
+
+</div>
+
+
+<div class="sui-loading-panel" style="left: 277px; top: 196px; z-index: 1; display: none;"><span class="sui-loading-image"></span><span class="sui-loading-back"></span></div></body></html> -->
+
+<!DOCTYPE html>
+    <meta charset="utf-8">
+    <script src="js/libs/jquery-1.11.2.min.js"></script>
+<table id="my_table_id"
+  data-url="data/url.json"
+  data-id-field="id"
+  data-editable-emptytext="Default empty text."
+  data-editable-url="/my/editable/update/path">
+  <thead>
+    <tr>
+      <th class="col-md-1" data-field="id" data-sortable="true" data-align="center">#</th>
+      <th class="col-md-4" data-field="name" data-editable="true">Name</th>
+      <th class="col-md-7" data-field="description" data-editable="true" data-editable-emptytext="Custom empty text.">Description</th>
+    </tr>
+  </thead>
+</table>
+<script>
+  (function($) {
+
+    'use strict';
+
+    $.extend($.fn.bootstrapTable.defaults, {
+        editable: true,
+        onEditableInit: function() {
+            return false;
+        },
+        onEditableSave: function(field, row, oldValue, $el) {
+            return false;
+        },
+        onEditableShown: function(field, row, $el, editable) {
+            return false;
+        },
+        onEditableHidden: function(field, row, $el, reason) {
+            return false;
+        }
+    });
+
+    $.extend($.fn.bootstrapTable.Constructor.EVENTS, {
+        'editable-init.bs.table': 'onEditableInit',
+        'editable-save.bs.table': 'onEditableSave',
+        'editable-shown.bs.table': 'onEditableShown',
+        'editable-hidden.bs.table': 'onEditableHidden'
+    });
+
+    var BootstrapTable = $.fn.bootstrapTable.Constructor,
+        _initTable = BootstrapTable.prototype.initTable,
+        _initBody = BootstrapTable.prototype.initBody;
+
+    BootstrapTable.prototype.initTable = function() {
+        var that = this;
+        _initTable.apply(this, Array.prototype.slice.apply(arguments));
+
+        if (!this.options.editable) {
+            return;
+        }
+
+        $.each(this.columns, function(i, column) {
+            if (!column.editable) {
+                return;
+            }
+
+            var editableOptions = {},
+                editableDataMarkup = [],
+                editableDataPrefix = 'editable-';
+
+            var processDataOptions = function(key, value) {
+                // Replace camel case with dashes.
+                var dashKey = key.replace(/([A-Z])/g, function($1) {
+                    return "-" + $1.toLowerCase();
+                });
+                if (dashKey.slice(0, editableDataPrefix.length) == editableDataPrefix) {
+                    var dataKey = dashKey.replace(editableDataPrefix, 'data-');
+                    editableOptions[dataKey] = value;
+                }
+            };
+
+            $.each(that.options, processDataOptions);
+
+            column.formatter = column.formatter || function(value, row, index) {
+                return value;
+            };
+            column._formatter = column._formatter ? column._formatter : column.formatter;
+            column.formatter = function(value, row, index) {
+                var result = column._formatter ? column._formatter(value, row, index) : value;
+
+                $.each(column, processDataOptions);
+
+                $.each(editableOptions, function(key, value) {
+                    editableDataMarkup.push(' ' + key + '="' + value + '"');
+                });
+
+                var _dont_edit_formatter = false;
+                if (column.editable.hasOwnProperty('noeditFormatter')) {
+                    _dont_edit_formatter = column.editable.noeditFormatter(value, row, index);
+                }
+
+                if (_dont_edit_formatter === false) {
+                    return ['<a href="javascript:void(0)"',
+                        ' data-name="' + column.field + '"',
+                        ' data-pk="' + row[that.options.idField] + '"',
+                        ' data-value="' + result + '"',
+                        editableDataMarkup.join(''),
+                        '>' + '</a>'
+                    ].join('');
+                } else {
+                    return _dont_edit_formatter;
+                }
+
+            };
+        });
+    };
+
+    BootstrapTable.prototype.initBody = function() {
+        var that = this;
+        _initBody.apply(this, Array.prototype.slice.apply(arguments));
+
+        if (!this.options.editable) {
+            return;
+        }
+
+        $.each(this.columns, function(i, column) {
+            if (!column.editable) {
+                return;
+            }
+
+            that.$body.find('a[data-name="' + column.field + '"]').editable(column.editable)
+                .off('save').on('save', function(e, params) {
+                    var data = that.getData(),
+                        index = $(this).parents('tr[data-index]').data('index'),
+                        row = data[index],
+                        oldValue = row[column.field];
+
+                    $(this).data('value', params.submitValue);
+                    row[column.field] = params.submitValue;
+                    that.trigger('editable-save', column.field, row, oldValue, $(this));
+                    that.resetFooter();
+                });
+            that.$body.find('a[data-name="' + column.field + '"]').editable(column.editable)
+                .off('shown').on('shown', function(e, editable) {
+                    var data = that.getData(),
+                        index = $(this).parents('tr[data-index]').data('index'),
+                        row = data[index];
+
+                    that.trigger('editable-shown', column.field, row, $(this), editable);
+                });
+            that.$body.find('a[data-name="' + column.field + '"]').editable(column.editable)
+                .off('hidden').on('hidden', function(e, reason) {
+                    var data = that.getData(),
+                        index = $(this).parents('tr[data-index]').data('index'),
+                        row = data[index];
+
+                    that.trigger('editable-hidden', column.field, row, $(this), reason);
+                });
+        });
+        this.trigger('editable-init');
+    };
+
+})(jQuery);
+</script>
+</body></html>

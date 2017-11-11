@@ -51,9 +51,10 @@ public class ServletCadastrar extends HttpServlet {
 
 		if (resultado==true) {
 			if (session.getAttribute("logado") == "OK") {
-				response.sendRedirect("logado.jsp");
+				response.sendRedirect("logado.jsp?sucess=true");
+                                
 			} else {
-				response.sendRedirect("logado.jsp");
+				response.sendRedirect("logado.jsp?sucess=true");
 			}
 		} else {
 			request.setAttribute("erroCadastro", "Erro ao cadastrar usuário, tente novamente.");

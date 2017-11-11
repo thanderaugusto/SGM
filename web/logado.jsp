@@ -51,6 +51,8 @@
           </li>
         </ul>
       </nav>
+  
+<a type="button" href="./logoff.jsp" class="btSair">Sair ${Usuario.getNome()}</a>
 </div>
 
   <!-- Modal Motorista -->
@@ -96,7 +98,7 @@
 
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title" style="text-align: center;">Cadastro de Motorista</h4>
+            <h4 class="modal-title" style="text-align: center;">Cadastro de Equipamento</h4>
           </div>
           <div class="modal-body">
             <label for="placaEquipamento">Frota</label>
@@ -113,7 +115,7 @@
           </div>
           <div class="modal-footer">
             <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
-            <button type="submit" class="btn btn-primary" o>Cadastrar</button>
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
           </div>
 
         </form>
@@ -122,7 +124,7 @@
     </div>
   </div>
 
-  <!-- Modal UsuÃ¡rio -->
+  <!-- Modal Usuário -->
   <div class="modal fade modalp" id="modalUsuario" role="dialog">
     <div class="modal-dialog">
     
@@ -132,13 +134,13 @@
 
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title" style="text-align: center;">Cadastro de Motorista</h4>
+            <h4 class="modal-title" style="text-align: center;">Cadastro de Usuário</h4>
           </div>
           <div class="modal-body">
             <label for="placaEquipamento">Nome</label>
             <input type="text" class="form-control" id="nomeUser" name="nome" placeholder="Digite seu nome" required>
             <br>
-            <label for="placaEquipamento">UsuÃ¡rio</label>
+            <label for="placaEquipamento">Usuário</label>
             <input type="text" class="form-control" id="loginUser" name="login" placeholder="Digite seu login" required>
             <br>
             <label for="modeloEquipamento">Senha</label>
@@ -149,7 +151,7 @@
           </div>
           <div class="modal-footer">
             <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
-            <button type="submit" class="btn btn-primary" o>Cadastrar</button>
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
           </div>
 
         </form>
@@ -157,7 +159,7 @@
       
     </div>
   </div>
-
+  
 
   <span class="bfooter"></span>
 
@@ -165,5 +167,11 @@
     <script src="js/libs/jquery.mask.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
+    
+    <% 
+        if (request.getParameter("sucess") != null){
+            out.print("<script>alert('Cadastrado com Sucesso!!')</script>");
+        }
+    %>
   </body>
 </html>
