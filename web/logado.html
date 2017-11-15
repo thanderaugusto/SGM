@@ -32,7 +32,7 @@
             <ul id="show">
               <li><a href="" data-toggle="modal" data-target="#modalEquipamento">Equipamento</a></li>
               <li><a href="" data-toggle="modal" data-target="#modalMotorista">Motorista</a></li>
-              <li><a href="">Manutenção</a></li>
+              <li><a href="" data-toggle="modal" data-target="#modalManutencao">Manutenção</a></li>
               <li><a href="" data-toggle="modal" data-target="#modalUsuario">Usuário</a></li>
             </ul>
           </li>
@@ -71,7 +71,7 @@
           </div>
           <div class="modal-footer">
             <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
-            <button type="submit" class="btn btn-warning">Cadastrar</button>
+            <button type="submit" class="btn btn-warning-mod">Cadastrar</button>
           </div>
 
         </form>
@@ -88,7 +88,7 @@
       <div class="modal-content">
         <form action="" method="post" accept-charset="utf-8">
 
-          <div class="modal-header">
+          <div class="modal-header modal-header-warning">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
             <h4 class="modal-title" style="text-align: center;">Cadastro de Equipamento</h4>
           </div>
@@ -107,7 +107,66 @@
           </div>
           <div class="modal-footer">
             <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
-            <button type="submit" class="btn btn-primary" o>Cadastrar</button>
+            <button type="submit" class="btn btn-warning-mod" o>Cadastrar</button>
+          </div>
+
+        </form>
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- Modal Manutenção -->
+  <div class="modal fade modalp" id="modalManutencao" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <form action="" method="post" accept-charset="utf-8">
+
+          <div class="modal-header modal-header-warning">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title" style="text-align: center;">Cadastro de Manutenção</h4>
+          </div>
+          <div class="modal-body" >
+            <div class="input-manut">
+              <label for="CodManutencao">Código</label>
+              <input type="text" class="form-control" id="CodManutencao" name="CodManutencao" placeholder="Digite o código" required>
+            </div>
+            <div class="input-manut">
+              <label for="dataEntManutencao">Data Entrada</label>
+              <input type="text" class="form-control" id="dataEntManutencao" name="dataEntManutencao" placeholder="Digite a data" required>
+            </div>
+            <div class="input-manut">
+              <label for="dataSaidManutencao">Data Saída</label>
+              <input type="text" class="form-control" id="dataSaidManutencao" name="dataSaidManutencao" placeholder="Digite a data" required>
+            </div><br><br>
+            <label for="tipoManutencao">Tipo de Manutenção</label>
+              <select class="form-control" id="tipoManutencao" name="tipoManutencao" required>
+                <option value="" selected disabled>Selecione a manutenção</option>
+                <option>A - MANUTENÇÃO PREVENTIVA</option>
+                <option>B - MANUTENÇÃO CORRETIRA</option>
+                <option>C - REPAROS LEVES</option>
+              </select><br>
+            <div class="select-frota">
+              <label for="frotaManutencao">Frota</label>
+              <select class="form-control" id="frotaManutencao" name="frotaManutencao" required>
+                <option value="" selected disabled>Listar...</option>  
+              </select>
+            </div>
+            <div class="select-manut">
+              <label for="motManutencao">Motorista</label>
+              <select class="form-control" id="motManutencao" name="motManutencao" required>
+                <option value="" selected disabled onclick="alert('tess');">Listar...</option>  
+              </select>
+            </div><br>
+            <label for="descManutencao">Descrição do Serviço</label>
+            <textarea class="form-control" rows="3" id="comment" style="max-width: 566px" placeholder="SEPARE OS SERVIÇOS COM VIRGULA"></textarea>
+            <!-- <input type="textarea" class="form-control" id="descManutencao" name="descManutencao" placeholder="SEPARE OS SERVIÇOS COM VIRGULA"> -->
+          </div>
+          <div class="modal-footer">
+            <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+            <button type="submit" class="btn btn-warning-mod" o>Cadastrar</button>
           </div>
 
         </form>
@@ -124,7 +183,7 @@
       <div class="modal-content">
           <form action="ServletCadastrar" method="post" accept-charset="utf-8">
 
-          <div class="modal-header">
+          <div class="modal-header modal-header-warning">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
             <h4 class="modal-title" style="text-align: center;">Cadastro de Usuário</h4>
           </div>
@@ -143,7 +202,7 @@
           </div>
           <div class="modal-footer">
             <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
-            <button type="submit" class="btn btn-primary" o>Cadastrar</button>
+            <button type="submit" class="btn btn-danger-mod" o>Cadastrar</button>
           </div>
 
         </form>
