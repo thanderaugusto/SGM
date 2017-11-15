@@ -11,8 +11,13 @@ $(document).ready(function(){
     });
 
     /*Máscaras*/
-    $("#nascMotorista").mask("99/99/9999");
+    $("#nascMotorista, #dataEntManutencao, #dataSaidManutencao").mask("99/99/9999");
     $("#cpfMotorista").mask("999.999.999-99");
+    $("#valorManutencao").maskMoney({
+         prefix: "R$:",
+         decimal: ",",
+         thousands: "."
+     });
 
     $("#frotaEquip").mask("9999-99");
 

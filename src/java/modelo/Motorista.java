@@ -23,6 +23,13 @@ public class Motorista {
         this.dataNascimento = dataNascimento;
         this.cpf = cpf;
     }
+
+    public Motorista(int pk_motorista, String nome) {
+        this.pk_motorista = pk_motorista;
+        this.nome = nome;
+    }
+    
+    
     
     
 

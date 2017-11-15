@@ -4,12 +4,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SGM- SISTEMA</title>
+    <title>SGM- SISTEMA DE GERENCIAMENTO E MANUTENÇÃO</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/normalize.css" rel="stylesheet">
     <link href="css/reset.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+
 </head>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -130,10 +131,6 @@
           </div>
           <div class="modal-body" >
             <div class="input-manut">
-              <label for="CodManutencao">Código</label>
-              <input type="text" class="form-control" id="CodManutencao" name="CodManutencao" placeholder="Digite o código" required>
-            </div>
-            <div class="input-manut">
               <label for="dataEntManutencao">Data Entrada</label>
               <input type="text" class="form-control" id="dataEntManutencao" name="dataEntManutencao" placeholder="Digite a data" required>
             </div>
@@ -159,10 +156,12 @@
               <select class="form-control" id="motManutencao" name="motManutencao" required>
                 <option value="" selected disabled onclick="alert('tess');">Listar...</option>  
               </select>
-            </div><br>
+            </div><br><br>
             <label for="descManutencao">Descrição do Serviço</label>
-            <textarea class="form-control" rows="3" id="comment" style="max-width: 566px" placeholder="SEPARE OS SERVIÇOS COM VIRGULA"></textarea>
-            <!-- <input type="textarea" class="form-control" id="descManutencao" name="descManutencao" placeholder="SEPARE OS SERVIÇOS COM VIRGULA"> -->
+            <textarea class="form-control" rows="3"   placeholder="Separe os serviços com vírgula"></textarea>
+            <br>
+            <label for="valorManutencao">Valor Total Manutenção</label>
+              <input type="text" class="form-control" id="valorManutencao" name="valorManutencao" placeholder="Digite o valor total" required>
           </div>
           <div class="modal-footer">
             <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->

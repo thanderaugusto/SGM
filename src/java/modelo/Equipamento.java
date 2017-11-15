@@ -10,6 +10,11 @@ public class Equipamento {
     private String modelo;
     private String ano;
 
+    public Equipamento() {
+    }
+    
+    
+
     public Equipamento(int pk_equipamento, String frota, String marca, String modelo, String ano) {
         this.pk_equipamento = pk_equipamento;
         this.frota = frota;
@@ -24,6 +29,12 @@ public class Equipamento {
         this.modelo = modelo;
         this.ano = ano;
     }
+
+    public Equipamento(int pk_equipamento, String frota) {
+        this.pk_equipamento = pk_equipamento;
+        this.frota = frota;
+    }
+    
     
     
     

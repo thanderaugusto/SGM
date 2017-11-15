@@ -123,38 +123,84 @@ a:link {
 }
    
 .modal-header-warning {
-	color:#fff;
-    padding:9px 15px;
-    border-bottom:1px solid #eee;
-    background-color: #f0ad4e;
-    -webkit-border-top-left-radius: 5px;
-    -webkit-border-top-right-radius: 5px;
-    -moz-border-radius-topleft: 5px;
-    -moz-border-radius-topright: 5px;
-     border-top-left-radius: 5px;
-     border-top-right-radius: 5px;
+	color:#000;
+  padding:9px 15px;
+  border-bottom:1px solid #eee;
+  background-color: #facc2d;
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  -moz-border-radius-topright: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.btn-warning-mod {
+	background-color: #facc2d;
+	color: #000;
+}
+
+.btn-warning-mod:hover {
+	background-color: #f3cb60;
+	color: #000;
 }
 
 
+/*inputs - select*/
+select.form-control:focus, input.form-control:focus, textarea.form-control:focus {
+    border: solid 1px #808080;
+    box-shadow: 2px 3px 8px rgb(200, 200,200);
+    -webkit-box-shadow: 2px 3px 8px rgb(200, 200,200);
+    -moz-box-shadow: 2px 3px 8px rgb(200, 200,200);
+}
 
-/*FIM DROP-DOWN*/
+
+.input-manut:nth-child(1) {
+    margin: 0 9px 0 auto;
+}
+
+.input-manut {
+	width: 277px;
+	display: inline-block;
+}
+
+.select-manut {
+	width: 390px;
+	display: inline-block;
+}
+.select-frota {
+	margin: 0 9px 0 auto;
+	display: inline-block;
+	width: 165px;	
+}
+
+#modalManutencao {
+	margin-top: -50px !important;
+}
+
+
+/*fim inputs*/
+modal, .modal {
+	padding-left: 0 !important; 
+}
+	
 
 /*RESPONSIVE*/
 
 label[for="bt_menu"]{
 	padding: 5px;
-	background-color: #081830;
-  	color: #fff;
-  	font-weight: bold;
-  	text-align: center;
-  	font-size: 30px;
-  	cursor: pointer;
-  	width: 49.5px;
-  	height: 49.5px;
-  	float: left;
+	background-color: #facc2d;
+  color: #000;
+  font-weight: bold;
+  text-align: center;
+  font-size: 30px;
+  cursor: pointer;
+  width: 49.5px;
+  height: 49.5px;
+  float: left;
 	margin-top: 38.6px;
 	z-index: 999;
-        display: none;
+   display: none;
 }
 
 #bt_menu {
@@ -221,6 +267,10 @@ div.modalp {
 
 label[for="bt_menu"]{
 	display: block;
+}
+.input-manut, .select-manut, .select-frota, select {
+	max-width: 100%;
+	min-width: 100%
 }
 	
 } 

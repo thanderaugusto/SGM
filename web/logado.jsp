@@ -4,6 +4,11 @@
     Author     : Thander
 --%>
 
+<%@page import="java.util.List"%>
+<%@page import="DAO.MotoristaDAO"%>
+<%@page import="modelo.Motorista"%>
+<%@page import="DAO.EquipamentoDAO"%>
+<%@page import="modelo.Equipamento"%>
 <%@page contentType="text/html: charset=UTF-8;" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="pt">
@@ -11,12 +16,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SGM- SISTEMA</title>
+    <title>SGM- SISTEMA DE GERENCIAMENTO E MANUTENÇÃO</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/normalize.css" rel="stylesheet">
     <link href="css/reset.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+
 </head>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -39,7 +45,7 @@
             <ul id="show">
               <li><a href="" data-toggle="modal" data-target="#modalEquipamento">Equipamento</a></li>
               <li><a href="" data-toggle="modal" data-target="#modalMotorista">Motorista</a></li>
-              <li><a href="">Manutenção</a></li>
+              <li><a href="" data-toggle="modal" data-target="#modalManutencao">Manutenção</a></li>
               <li><a href="" data-toggle="modal" data-target="#modalUsuario">Usuário</a></li>
             </ul>
           </li>
@@ -51,8 +57,7 @@
           </li>
         </ul>
       </nav>
-  
-<a type="button" href="./logoff.jsp" class="btSair">Sair ${Usuario.getNome()}</a>
+<a type="button" href="./logoff.jsp" class="btSair">Sair</a>
 </div>
 
   <!-- Modal Motorista -->
@@ -63,7 +68,7 @@
       <div class="modal-content center">
         <form action="ServletMotorista" method="post" accept-charset="utf-8">
 
-          <div class="modal-header">
+          <div class="modal-header modal-header-warning">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
             <h4 class="modal-title" style="text-align: center;">Cadastro de Motorista</h4>
           </div>
@@ -79,7 +84,7 @@
           </div>
           <div class="modal-footer">
             <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
-            <button type="submit" class="btn btn-primary">Cadastrar</button>
+            <button type="submit" class="btn btn-warning-mod">Cadastrar</button>
           </div>
 
         </form>
@@ -94,9 +99,9 @@
     
       <!-- Modal content-->
       <div class="modal-content">
-        <form action="" method="post" accept-charset="utf-8">
+        <form action="ServletEquipamento" method="post" accept-charset="utf-8">
 
-          <div class="modal-header">
+          <div class="modal-header modal-header-warning">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
             <h4 class="modal-title" style="text-align: center;">Cadastro de Equipamento</h4>
           </div>
@@ -115,7 +120,77 @@
           </div>
           <div class="modal-footer">
             <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
-            <button type="submit" class="btn btn-primary">Cadastrar</button>
+            <button type="submit" class="btn btn-warning-mod" o>Cadastrar</button>
+          </div>
+
+        </form>
+      </div>
+      
+    </div>
+  </div>
+  
+  <!-- Modal Manutenção -->
+  <div class="modal fade modalp" id="modalManutencao" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <form action="" method="post" accept-charset="utf-8">
+
+          <div class="modal-header modal-header-warning">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title" style="text-align: center;">Cadastro de Manutenção</h4>
+          </div>
+          <div class="modal-body" >
+            <div class="input-manut">
+              <label for="dataEntManutencao">Data Entrada</label>
+              <input type="text" class="form-control" id="dataEntManutencao" name="dataEntManutencao" placeholder="Digite a data" required>
+            </div>
+            <div class="input-manut">
+              <label for="dataSaidManutencao">Data Saída</label>
+              <input type="text" class="form-control" id="dataSaidManutencao" name="dataSaidManutencao" placeholder="Digite a data" required>
+            </div><br><br>
+            <label for="tipoManutencao">Tipo de Manutenção</label>
+              <select class="form-control" id="tipoManutencao" name="tipoManutencao" required>
+                <option value="" selected disabled>Selecione a manutenção</option>
+                <option>A - MANUTENÇÃO PREVENTIVA</option>
+                <option>B - MANUTENÇÃO CORRETIRA</option>
+                <option>C - REPAROS LEVES</option>
+              </select><br>
+            <div class="select-frota">
+              <label for="frotaManutencao">Frota</label>
+              <select class="form-control" id="frotaManutencao" name="frotaManutencao" required>
+                <option value="" selected>Selecione Frota</option
+                  <%
+                    EquipamentoDAO equip = new EquipamentoDAO();
+                    List<Equipamento> equipamentos = equip.retrieveAll();
+                        for(Equipamento e: equipamentos){%>
+                        <option><%=e.getFrota()%></option>    
+                <%}%>  
+              </select>
+            </div>
+            <div class="select-manut">
+              <label for="motManutencao">Motorista</label>
+              <select class="form-control" id="motManutencao" name="motManutencao" required>
+                  <option value="" selected>Selecione um Motorista</option
+                  <%
+                    MotoristaDAO dao = new MotoristaDAO();
+                    List<Motorista> motoristas = dao.retrieveAll();
+                        for(Motorista m: motoristas){%>
+                    <option><%=m.getNome()%></option>    
+                <%}%>
+              </select>
+                         
+            </div><br><br>
+            <label for="descManutencao">Descrição do Serviço</label>
+            <textarea class="form-control" rows="3"   placeholder="Separe os serviços com vírgula"></textarea>
+            <br>
+            <label for="valorManutencao">Valor Total Manutenção</label>
+              <input type="text" class="form-control" id="valorManutencao" name="valorManutencao" placeholder="Digite o valor total" required>
+          </div>
+          <div class="modal-footer">
+            <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+            <button type="submit" class="btn btn-warning-mod" o>Cadastrar</button>
           </div>
 
         </form>
@@ -132,7 +207,7 @@
       <div class="modal-content">
           <form action="ServletCadastrar" method="post" accept-charset="utf-8">
 
-          <div class="modal-header">
+          <div class="modal-header modal-header-warning">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
             <h4 class="modal-title" style="text-align: center;">Cadastro de Usuário</h4>
           </div>
@@ -151,7 +226,7 @@
           </div>
           <div class="modal-footer">
             <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
-            <button type="submit" class="btn btn-primary">Cadastrar</button>
+            <button type="submit" class="btn btn-danger-mod" o>Cadastrar</button>
           </div>
 
         </form>
@@ -159,18 +234,22 @@
       
     </div>
   </div>
-  
+
 
   <span class="bfooter"></span>
 
     <script src="js/libs/jquery-1.11.2.min.js"></script>
     <script src="js/libs/jquery.mask.min.js"></script>
+    <script src="js/libs/jquery.maskmoney.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
     
     <% 
         if (request.getParameter("sucess") != null){
             out.print("<script>alert('Cadastrado com Sucesso!!')</script>");
+        }
+        else if(request.getParameter("error") != null){
+            out.print("<script>alert('Aconteceu algo, tente novamente!!')</script>");
         }
     %>
   </body>

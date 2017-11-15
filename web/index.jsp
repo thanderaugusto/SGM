@@ -11,7 +11,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SGM</title>
+    <title>LOGIN - SGM - SISTEMA DE GERENCIAMENTO E MANUTENÇÃO</title>
 
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/login.css" rel="stylesheet">
@@ -29,15 +29,14 @@
                          <div id="erro" style="color: red; font-size: 13px; padding: 3px; display: none;">
                              <strong>Erro!</strong> Verifique Login ou senha
                          </div>
-          
-                    <div class="id">
-                        <i class="fa fa-lock" aria-hidden="true"></i>
-                        <input type="text" placeholder="login" class="txt" name="login" required>
-                    </div>
-                    <div class="pass">
-                        <i class="fa fa-user" aria-hidden="true"></i>
-                        <input type="password" placeholder="senha" class="txt" name="senha" required>
-                    </div> 
+                        <div class="id">
+                            <i class="fa fa-lock" aria-hidden="true"></i>
+                            <input type="text" placeholder="login" class="txt" id="nome" name="login" required>
+                        </div>
+                        <div class="pass">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                            <input type="password" placeholder="senha" class="txt" id="pass" name="senha" required>
+                        </div> 
                         <br>
                     <button type="submit" class="bt">Logar</button>
                 </form>
