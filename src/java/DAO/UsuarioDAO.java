@@ -61,6 +61,23 @@ public class UsuarioDAO {
 	}
     return user;
     }
+    
+    public Usuario retrieve() throws SQLException {
+        String sql = "select nome from usuarios";
+        
+            PreparedStatement stm = connection.prepareStatement(sql);
+            Statement stmt = (Statement) this.connection.createStatement();
+            
+            stm.execute();
+
+            ResultSet rs = stm.getResultSet();
+            
+            rs.next();
+            
+            Usuario u = new Usuario(rs.getString("nome"));
+            
+            return u;
+    }
 
 }
 

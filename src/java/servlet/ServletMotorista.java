@@ -49,13 +49,13 @@ public class ServletMotorista extends HttpServlet {
 
 		if (resultado==true) {
 			if (session.getAttribute("logado") == "OK") {
-				response.sendRedirect("logado.jsp");
+				response.sendRedirect("logado.jsp?sucess=true");
 			} else {
-				response.sendRedirect("logado.jsp");
+				response.sendRedirect("logado.jsp?sucess=true");
 			}
 		} else {
 			request.setAttribute("erroCadastro", "Erro ao cadastrar motorista, tente novamente.");
-			RequestDispatcher rd = request.getRequestDispatcher("logado.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("logado.jsp?error=true");
 			rd.forward(request, response);
                 }
     }

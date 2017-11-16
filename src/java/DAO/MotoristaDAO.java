@@ -58,4 +58,22 @@ public class MotoristaDAO {
 
         return aux;
     }
+    public int retrieveFK(String nome) throws SQLException{
+        String sql = "select pk_motorista from motoristas where nome = ?";
+        
+        PreparedStatement stm = connection.prepareStatement(sql);
+        
+            Statement stmt = (Statement) this.connection.createStatement();
+            stm.setString(1, nome);
+            stm.execute();
+
+            ResultSet rs = stm.getResultSet();
+            
+            rs.next();
+            
+            int pk_equipamento = rs.getInt("pk_motorista");
+            
+        return pk_equipamento;
+    }
+    
 }

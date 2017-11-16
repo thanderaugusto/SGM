@@ -4,6 +4,7 @@
     Author     : Thander
 --%>
 
+
 <%@page import="java.util.List"%>
 <%@page import="DAO.MotoristaDAO"%>
 <%@page import="modelo.Motorista"%>
@@ -52,12 +53,22 @@
           <li><a href="" id="v"><span class="setar"><span class="seta"></span>Relatório</a>
             <ul>
               <li><a href="">Equipamento</a></li>
-              <li><a href="">Motorista</a></li>
+              <li><a href="ServletRelEquipamento">Motorista</a></li>
             </ul>
           </li>
         </ul>
       </nav>
-<a type="button" href="./logoff.jsp" class="btSair">Sair</a>
+      <%
+          String nome = (String)request.getSession().getAttribute("nome");
+          if(nome=="" || nome==null){
+              nome ="erro   ";
+          }
+      %>
+
+      <div class="btSair">
+          <%=nome%> - 
+          <a type="button" href="./logoff.jsp">Sair</a>
+      </div>
 </div>
 
   <!-- Modal Motorista -->
@@ -106,16 +117,16 @@
             <h4 class="modal-title" style="text-align: center;">Cadastro de Equipamento</h4>
           </div>
           <div class="modal-body">
-            <label for="placaEquipamento">Frota</label>
+            <label for="frotaEquip">Frota</label>
             <input type="text" class="form-control" id="frotaEquip" name="frotaEquip" placeholder="Digite a frota" required>
             <br>
-            <label for="placaEquipamento">Marca</label>
+            <label for="marcaEquip">Marca</label>
             <input type="text" class="form-control" id="marcaEquip" name="marcaEquip" placeholder="Digite a marca" required>
             <br>
-            <label for="modeloEquipamento">Modelo</label>
+            <label for="modeloEquip">Modelo</label>
             <input type="text" class="form-control" id="modeloEquip" name="modeloEquip" placeholder="Digite o modelo " required>
             <br>
-            <label for="modeloEquipamento">Ano</label>
+            <label for="anoEquip">Ano</label>
             <input type="text" class="form-control" id="anoEquip" name="anoEquip" placeholder="Digite o ano " required>
           </div>
           <div class="modal-footer">
@@ -135,7 +146,7 @@
     
       <!-- Modal content-->
       <div class="modal-content">
-        <form action="" method="post" accept-charset="utf-8">
+        <form action="ServletManutencao" method="post" accept-charset="utf-8">
 
           <div class="modal-header modal-header-warning">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -183,7 +194,7 @@
                          
             </div><br><br>
             <label for="descManutencao">Descrição do Serviço</label>
-            <textarea class="form-control" rows="3"   placeholder="Separe os serviços com vírgula"></textarea>
+            <textarea class="form-control" rows="3" placeholder="Separe os serviços com vírgula" id="tipoServico" name="tipoServico"></textarea>
             <br>
             <label for="valorManutencao">Valor Total Manutenção</label>
               <input type="text" class="form-control" id="valorManutencao" name="valorManutencao" placeholder="Digite o valor total" required>
@@ -226,7 +237,7 @@
           </div>
           <div class="modal-footer">
             <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
-            <button type="submit" class="btn btn-danger-mod" o>Cadastrar</button>
+            <button type="submit" class="btn btn-warning-mod" o>Cadastrar</button>
           </div>
 
         </form>

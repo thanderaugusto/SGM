@@ -2,7 +2,12 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group name="2017/2"/>
-        <group/>
+        <group name="2017/2">
+            <file>file:/J:/TSI/4º%20Semestre/AS%20-%20Rodrigo/Projeto%20SGM/SGMT/src/java/controller/ConnectionFactory.java</file>
+        </group>
+        <group>
+            <file>file:/G:/TSI/4º%20Semestre/AS%20-%20Rodrigo/Projeto%20SGM/SGMT/src/java/DAO/ManutencaoDAO.java</file>
+            <file>file:/G:/TSI/4º%20Semestre/AS%20-%20Rodrigo/Projeto%20SGM/SGMT/src/java/servlet/ServletRelEquipamento.java</file>
+        </group>
     </open-files>
 </project-private>

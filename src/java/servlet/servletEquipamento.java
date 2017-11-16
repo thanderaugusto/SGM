@@ -54,6 +54,7 @@ public class servletEquipamento extends HttpServlet {
                                 
 			} else {
 				response.sendRedirect("logado.jsp?sucess=true");
+
 			}
 		} else {
 			request.setAttribute("erroCadastro", "Erro ao cadastrar usuário, tente novamente.");

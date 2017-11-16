@@ -58,7 +58,7 @@ public class ServletCadastrar extends HttpServlet {
 			}
 		} else {
 			request.setAttribute("erroCadastro", "Erro ao cadastrar usuário, tente novamente.");
-			RequestDispatcher rd = request.getRequestDispatcher("logado.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("logado.jsp?error=true");
 			rd.forward(request, response);
                 }
     }

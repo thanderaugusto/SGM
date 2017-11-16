@@ -69,7 +69,7 @@ public class ServletLogar extends HttpServlet {
         
         if(user != null){
             HttpSession session = request.getSession(true);
-            session.setAttribute("logado", "OK");
+            session.setAttribute("logado", "nome");
             session.setAttribute("id", user.getPk_usuario());
             session.setAttribute("nome", user.getNome());
             session.setAttribute("usuario", user.getLogin());

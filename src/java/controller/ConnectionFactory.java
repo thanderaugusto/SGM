@@ -5,7 +5,7 @@ package controller;
 public class ConnectionFactory {
     public Connection getConnection(){
         try {
-            return DriverManager.getConnection("jdbc:postgresql://localhost:5432/sgm","postgres","2426");
+            return DriverManager.getConnection("jdbc:postgresql://localhost:5432/sgmt","postgres","24261208t");
         } catch (SQLException excecao) {
             throw new RuntimeException(excecao);
         }

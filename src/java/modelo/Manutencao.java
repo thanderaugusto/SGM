@@ -2,19 +2,21 @@
 
 package modelo;
 
-import java.sql.Date;
-
 
 public class Manutencao {
     private int pk_manutencao;
-    private Date data_entrada;
-    private Date data_saida;
+    private String data_entrada;
+    private String data_saida;
     private String tipoManutencao;
+    private String tipoServico;
     private int fk_equipamento;
     private int fk_motorista;
-    private float valorTotal;
+    private double valorTotal;
 
-    public Manutencao(int pk_manutencao, Date data_entrada, Date data_saida, String tipoManutencao, int fk_equipamento, int fk_motorista, float valorTotal) {
+    public Manutencao() {
+    }
+
+    public Manutencao(int pk_manutencao, String data_entrada, String data_saida, String tipoManutencao, int fk_equipamento, int fk_motorista, double valorTotal,String tipoServico) {
         this.pk_manutencao = pk_manutencao;
         this.data_entrada = data_entrada;
         this.data_saida = data_saida;
@@ -22,25 +24,18 @@ public class Manutencao {
         this.fk_equipamento = fk_equipamento;
         this.fk_motorista = fk_motorista;
         this.valorTotal = valorTotal;
+        this.tipoServico = tipoServico;
     }
 
-    public Manutencao(Date data_entrada, Date data_saida, String tipoManutencao, int fk_equipamento, int fk_motorista, float valorTotal) {
+    public Manutencao(String data_entrada, String data_saida, String tipoManutencao, int fk_equipamento, int fk_motorista, double valorTotal, String tipoServico) {
         this.data_entrada = data_entrada;
         this.data_saida = data_saida;
         this.tipoManutencao = tipoManutencao;
         this.fk_equipamento = fk_equipamento;
         this.fk_motorista = fk_motorista;
         this.valorTotal = valorTotal;
+        this.tipoServico = tipoServico;
     }
-
-    public Manutencao(Date data_entrada, Date data_saida, String tipoManutencao, float valorTotal) {
-        this.data_entrada = data_entrada;
-        this.data_saida = data_saida;
-        this.tipoManutencao = tipoManutencao;
-        this.valorTotal = valorTotal;
-    }
-    
-    
 
     public int getPk_manutencao() {
         return pk_manutencao;
@@ -50,19 +45,19 @@ public class Manutencao {
         this.pk_manutencao = pk_manutencao;
     }
 
-    public Date getData_entrada() {
+    public String getData_entrada() {
         return data_entrada;
     }
 
-    public void setData_entrada(Date data_entrada) {
+    public void setData_entrada(String data_entrada) {
         this.data_entrada = data_entrada;
     }
 
-    public Date getData_saida() {
+    public String getData_saida() {
         return data_saida;
     }
 
-    public void setData_saida(Date data_saida) {
+    public void setData_saida(String data_saida) {
         this.data_saida = data_saida;
     }
 
@@ -90,18 +85,29 @@ public class Manutencao {
         this.fk_motorista = fk_motorista;
     }
 
-    public float getValorTotal() {
+    public double getValorTotal() {
         return valorTotal;
     }
 
-    public void setValorTotal(float valorTotal) {
+    public void setValorTotal(double valorTotal) {
         this.valorTotal = valorTotal;
     }
 
+    public String getTipoServico() {
+        return tipoServico;
+    }
+
+    public void setTipoServico(String tipoServico) {
+        this.tipoServico = tipoServico;
+    }
+    
+    
+    
     @Override
     public String toString() {
-        return "manutencao{" + "pk_manutencao=" + pk_manutencao + ", data_entrada=" + data_entrada + ", data_saida=" + data_saida + ", tipoManutencao=" + tipoManutencao + ", fk_equipamento=" + fk_equipamento + ", fk_motorista=" + fk_motorista + ", valorTotal=" + valorTotal + '}';
+        return "Manutencao{" + "pk_manutencao=" + pk_manutencao + ", data_entrada=" + data_entrada + ", data_saida=" + data_saida + ", tipoManutencao=" + tipoManutencao + ", fk_equipamento=" + fk_equipamento + ", fk_motorista=" + fk_motorista + ", valorTotal=" + valorTotal + '}';
     }
+
     
     
     

@@ -14,8 +14,7 @@ $(document).ready(function(){
     $("#nascMotorista, #dataEntManutencao, #dataSaidManutencao").mask("99/99/9999");
     $("#cpfMotorista").mask("999.999.999-99");
     $("#valorManutencao").maskMoney({
-         prefix: "R$:",
-         decimal: ",",
+         decimal: ".",
          thousands: "."
      });
 

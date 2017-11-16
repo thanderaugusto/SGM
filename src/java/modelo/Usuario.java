@@ -31,6 +31,11 @@ public class Usuario {
         this.login = login;
         this.senha = senha;
     }
+
+    public Usuario(String nome) {
+        this.nome = nome;
+    }
+    
     
     
 
